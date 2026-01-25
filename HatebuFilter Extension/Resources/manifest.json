@@ -22,7 +22,8 @@
             ],
             "matches": [
                 "https://b.hatena.ne.jp/*"
-            ]
+            ],
+            "run_at": "document_end"
         }
     ],
     "action": {

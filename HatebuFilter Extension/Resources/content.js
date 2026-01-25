@@ -18,7 +18,7 @@ function filterEntries(keywords) {
   }
 }
 
-(async () => {
+async function update() {
   const resp = await browser.runtime.sendMessage({ message: "load" });
   const filter = resp.filter ?? "";
   const keywords = filter
@@ -26,4 +26,14 @@ function filterEntries(keywords) {
     .map((i) => i.trim())
     .filter((i) => i);
   filterEntries(keywords);
-})();
+}
+
+function updateN(n, i) {
+  if (n == 0) {
+    return;
+  }
+  update();
+  setTimeout(() => updateN(n - 1, i), i);
+}
+
+updateN(30, 100);
