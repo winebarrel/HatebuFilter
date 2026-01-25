@@ -37,3 +37,7 @@ function updateN(n, i) {
 }
 
 updateN(30, 100);
+
+chrome.runtime.onMessage.addListener(async () => {
+  await update();
+});
