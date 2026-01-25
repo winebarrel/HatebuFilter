@@ -11,7 +11,7 @@ async function filterEntries(keywords) {
     removeEntry(header, keywords);
   }
 
-  const entries = document.querySelectorAll("li.entrylist-image-entry");
+  const entries = document.querySelectorAll("ul.entrylist-item > li");
 
   for (const e of entries) {
     removeEntry(e, keywords);
