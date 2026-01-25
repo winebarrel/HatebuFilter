@@ -321,7 +321,7 @@
 				DEVELOPMENT_TEAM = 97A8B2WE2P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HatebuFilter/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = HatebuFilter;
+				INFOPLIST_KEY_CFBundleDisplayName = "はてブフィルター";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -361,7 +361,7 @@
 				DEVELOPMENT_TEAM = 97A8B2WE2P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = HatebuFilter/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = HatebuFilter;
+				INFOPLIST_KEY_CFBundleDisplayName = "はてブフィルター";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
