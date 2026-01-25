@@ -22,8 +22,7 @@
             ],
             "matches": [
                 "https://b.hatena.ne.jp/*"
-            ],
-            "run_at": "document_end"
+            ]
         }
     ],
     "action": {
@@ -31,6 +30,7 @@
         "default_icon": "images/toolbar-icon.svg"
     },
     "permissions": [
-        "storage"
+        "storage",
+        "tabs"
     ]
 }
