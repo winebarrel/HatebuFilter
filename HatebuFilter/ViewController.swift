@@ -25,6 +25,9 @@ class ViewController: UIViewController, WKNavigationDelegate, WKScriptMessageHan
         }
         if body == "settings" {
             let url = URL(string: "App-Prefs:com.apple.mobilesafari")!
+            guard UIApplication.shared.canOpenURL(url) else {
+                return
+            }
             UIApplication.shared.open(url)
         }
     }
