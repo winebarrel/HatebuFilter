@@ -18,26 +18,30 @@ function filterEntries(keywords) {
   }
 }
 
-async function update() {
+async function loadKeywords() {
   const resp = await browser.runtime.sendMessage({ message: "load" });
   const filter = resp.filter ?? "";
   const keywords = filter
     .split("\n")
     .map((i) => i.trim())
     .filter((i) => i);
-  filterEntries(keywords);
+  return keywords;
 }
 
-function updateN(n, i) {
+function filterN(n, i, keywords) {
   if (n == 0) {
     return;
   }
-  update();
-  setTimeout(() => updateN(n - 1, i), i);
+  filterEntries(keywords);
+  setTimeout(() => filterN(n - 1, i, keywords), i);
 }
 
-updateN(30, 100);
+(async () => {
+  const keywords = await loadKeywords();
+  filterN(30, 100, keywords);
+})();
 
 chrome.runtime.onMessage.addListener(async () => {
-  await update();
+  const keywords = await loadKeywords();
+  filterEntries(keywords);
 });
