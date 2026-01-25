@@ -2,7 +2,6 @@ import UIKit
 import WebKit
 
 class ViewController: UIViewController, WKNavigationDelegate, WKScriptMessageHandler {
-
     @IBOutlet var webView: WKWebView!
 
     override func viewDidLoad() {
@@ -21,7 +20,10 @@ class ViewController: UIViewController, WKNavigationDelegate, WKScriptMessageHan
     }
 
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        // Override point for customization.
+        let body = message.body as! String
+        if body == "settings" {
+            let url = URL(string: "App-Prefs:com.apple.mobilesafari")!
+            UIApplication.shared.open(url)
+        }
     }
-
 }
