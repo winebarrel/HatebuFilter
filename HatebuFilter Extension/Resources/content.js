@@ -4,7 +4,7 @@ function removeEntry(entry, keywords) {
   }
 }
 
-async function filterEntries(keywords) {
+function filterEntries(keywords) {
   const header = document.querySelector("div.entrylist-header");
 
   if (header) {
@@ -25,5 +25,5 @@ async function filterEntries(keywords) {
     .split("\n")
     .map((i) => i.trim())
     .filter((i) => i);
-  await filterEntries(keywords);
+  filterEntries(keywords);
 })();
