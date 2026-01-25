@@ -20,7 +20,9 @@ class ViewController: UIViewController, WKNavigationDelegate, WKScriptMessageHan
     }
 
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        let body = message.body as! String
+        guard let body = message.body as? String else {
+            return
+        }
         if body == "settings" {
             let url = URL(string: "App-Prefs:com.apple.mobilesafari")!
             UIApplication.shared.open(url)
