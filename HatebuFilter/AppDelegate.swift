@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  HatebuFilter
-//
-//  Created by 菅原元気 on 2026/01/25.
-//
-
 import UIKit
 
 @main

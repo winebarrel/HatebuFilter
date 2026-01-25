@@ -1,10 +1,3 @@
-//
-//  SafariWebExtensionHandler.swift
-//  HatebuFilter Extension
-//
-//  Created by 菅原元気 on 2026/01/25.
-//
-
 import SafariServices
 import os.log
 
