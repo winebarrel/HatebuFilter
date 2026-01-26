@@ -28,12 +28,12 @@ async function loadKeywords() {
   return keywords;
 }
 
-function filterN(n, i, keywords) {
+function filterN(n, delay, keywords) {
   if (n == 0) {
     return;
   }
   filterEntries(keywords);
-  setTimeout(() => filterN(n - 1, i, keywords), i);
+  setTimeout(() => filterN(n - 1, delay, keywords), delay);
 }
 
 (async () => {
