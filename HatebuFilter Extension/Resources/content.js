@@ -28,8 +28,17 @@ async function loadKeywords() {
   return keywords;
 }
 
-(async () => {
+function isFilterable() {
   if (location.href?.startsWith("https://b.hatena.ne.jp/entry/s/")) {
+    return false;
+  }
+
+  const entrylistMain = document.querySelector("div.entrylist-main");
+  return entrylistMain != null;
+}
+
+(async () => {
+  if (!isFilterable()) {
     return;
   }
 
@@ -39,6 +48,10 @@ async function loadKeywords() {
 })();
 
 chrome.runtime.onMessage.addListener(async () => {
+  if (!isFilterable()) {
+    return;
+  }
+
   const keywords = await loadKeywords();
   filterEntries(keywords);
 });
