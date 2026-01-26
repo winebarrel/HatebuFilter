@@ -31,7 +31,9 @@
         "default_icon": "images/toolbar-icon.svg"
     },
     "permissions": [
-        "storage",
-        "tabs"
+        "storage"
+    ],
+    "host_permissions": [
+        "https://b.hatena.ne.jp/*"
     ]
 }

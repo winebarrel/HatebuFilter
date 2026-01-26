@@ -16,6 +16,14 @@ function filterEntries(keywords) {
   for (const e of entries) {
     removeEntry(e, keywords);
   }
+
+  const searchEntries = document.querySelectorAll(
+    "ul.entrysearch-articles > li"
+  );
+
+  for (const e of searchEntries) {
+    removeEntry(e, keywords);
+  }
 }
 
 async function loadKeywords() {
@@ -34,7 +42,8 @@ function isFilterable() {
   }
 
   const entrylistWrapper = document.querySelector("div.entrylist-wrapper");
-  return entrylistWrapper != null;
+  const searchContainer = document.querySelector("div.search-container");
+  return entrylistWrapper != null || searchContainer != null;
 }
 
 (async () => {
