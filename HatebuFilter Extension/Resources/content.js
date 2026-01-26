@@ -37,8 +37,10 @@ function filterN(n, i, keywords) {
 }
 
 (async () => {
-  const keywords = await loadKeywords();
-  filterN(30, 100, keywords);
+  if (!location.href?.startsWith("https://b.hatena.ne.jp/entry/s/")) {
+    const keywords = await loadKeywords();
+    filterN(30, 100, keywords);
+  }
 })();
 
 chrome.runtime.onMessage.addListener(async () => {

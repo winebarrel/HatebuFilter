@@ -15,7 +15,8 @@ browser.runtime.onMessage.addListener(
 chrome.tabs.onUpdated.addListener(async (tabId, props, tab) => {
   if (
     props.status == "complete" &&
-    tab.url?.startsWith("https://b.hatena.ne.jp")
+    tab.url?.startsWith("https://b.hatena.ne.jp") &&
+    !tab.url?.startsWith("https://b.hatena.ne.jp/entry/s/")
   ) {
     await chrome.tabs.sendMessage(tabId, {});
   }
