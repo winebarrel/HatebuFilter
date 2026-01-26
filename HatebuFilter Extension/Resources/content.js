@@ -33,8 +33,8 @@ function isFilterable() {
     return false;
   }
 
-  const entrylistMain = document.querySelector("div.entrylist-main");
-  return entrylistMain != null;
+  const entrylistWrapper = document.querySelector("div.entrylist-wrapper");
+  return entrylistWrapper != null;
 }
 
 (async () => {
