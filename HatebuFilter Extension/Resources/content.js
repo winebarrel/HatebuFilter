@@ -28,19 +28,14 @@ async function loadKeywords() {
   return keywords;
 }
 
-function filterN(n, delay, keywords) {
-  if (n == 0) {
+(async () => {
+  if (location.href?.startsWith("https://b.hatena.ne.jp/entry/s/")) {
     return;
   }
-  filterEntries(keywords);
-  setTimeout(() => filterN(n - 1, delay, keywords), delay);
-}
 
-(async () => {
-  if (!location.href?.startsWith("https://b.hatena.ne.jp/entry/s/")) {
-    const keywords = await loadKeywords();
-    filterN(30, 100, keywords);
-  }
+  const keywords = await loadKeywords();
+  const id = setInterval(() => filterEntries(keywords), 100);
+  setTimeout(() => clearInterval(id), 3000);
 })();
 
 chrome.runtime.onMessage.addListener(async () => {
