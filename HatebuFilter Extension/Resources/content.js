@@ -27,7 +27,7 @@ function filterEntries(keywords) {
 }
 
 async function loadKeywords() {
-  const resp = await browser.runtime.sendMessage({ message: "load" });
+  const resp = await chrome.runtime.sendMessage({ message: "load" });
   const filter = resp.filter ?? "";
   const keywords = filter
     .split("\n")
